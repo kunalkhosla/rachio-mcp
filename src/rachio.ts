@@ -202,6 +202,24 @@ export class RachioClient {
   ): Promise<void> {
     return this.request("PUT", "/zone/start_multiple", { zones });
   }
+  enableZone(zoneId: string): Promise<void> {
+    return this.request("PUT", "/zone/enable", { id: zoneId });
+  }
+  disableZone(zoneId: string): Promise<void> {
+    return this.request("PUT", "/zone/disable", { id: zoneId });
+  }
+  setZoneMoistureLevel(zoneId: string, levelMm: number): Promise<void> {
+    return this.request("PUT", "/zone/setMoistureLevel", {
+      id: zoneId,
+      level: levelMm,
+    });
+  }
+  setZoneMoisturePercent(zoneId: string, percent: number): Promise<void> {
+    return this.request("PUT", "/zone/setMoisturePercent", {
+      id: zoneId,
+      percent,
+    });
+  }
 
   // Schedule rule control
   skipScheduleRule(scheduleRuleId: string): Promise<void> {
