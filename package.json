@@ -1,0 +1,33 @@
+{
+  "name": "rachio-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for the Rachio sprinkler controller public API",
+  "license": "MIT",
+  "author": "Kunal Khosla",
+  "type": "module",
+  "bin": {
+    "rachio-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
